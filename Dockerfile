@@ -1,11 +1,11 @@
-# Container image that runs your code
-FROM python:3
+FROM python:3-slim AS builder
+ADD . /app
+WORKDIR /app
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY action.py /action.py
-COPY requirements.txt /requirements.txt
+RUN pip install --target=/app pyyaml==5.4.1
 
-RUN pip install -r requirements.txt
-
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-CMD [ "python", "./action.py" ]
+FROM gcr.io/distroless/python3-debian10
+COPY --from=builder /app /app
+WORKDIR /app
+ENV PYTHONPATH /app
+CMD ["/app/action.py"]
