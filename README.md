@@ -3,25 +3,25 @@ GitHub Action to update Kustomize image tag, in different environments, by name.
 
 ## Inputs
 
-## `imageName`
+### `imageName`
 
 **Required** The name of the image to update.
 
-## `newImageTag`
+### `newImageTag`
 
 **Required** The new tag to update to.
 
-## `environment`
+### `environment`
 
-**Required** The name of the environment to update. Default `"dev"`.
+**Optional** The name of the environment to update. Default `"dev"`.
 
-## `defaultFolder`
+### `defaultFolder`
 
-**Required** The default folder to find kustomize environment folders.  Default `"./kustomize"`.
+**Optional** The default folder to find kustomize environment folders.  Default `"./kustomize"`.
 
-## `defaultFileExtension`
+### `defaultFileExtension`
 
-**Required** The default file extension for kustomize files.  Default `".yaml"`.
+**Optional** The default file extension for kustomize files.  Default `".yaml"`.
 
 ## Example usage
 

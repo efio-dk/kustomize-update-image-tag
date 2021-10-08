@@ -10,15 +10,12 @@ inputs:
     required: true
   environment:
     description: 'What environment folder to update'
-    required: true
     default: 'dev'
   defaultFolder:
     description: 'What is the default kustomize folder'
-    required: true
     default: './kustomize'
   defaultFileExtension:
     description: 'What is the default kustomize file extension'
-    required: true
     default: '.yaml'
 runs:
   using: 'docker'
