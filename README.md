@@ -46,3 +46,16 @@ jobs:
           defaultFolder: './kustomize' # (optional, default is "./kustomize")
           defaultFileExtension: '.yaml' # (optional, default is ".yaml")
 ```
+
+## Example for Kustomize dev environment
+```yaml
+bases:
+- ...
+patches:
+- ...
+
+images:
+- name: test-image
+  newName: hello-world
+  newTag: nanoserver-sac2016
+```
