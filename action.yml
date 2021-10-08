@@ -1,0 +1,25 @@
+# action.yml
+name: 'Update Kustomize Image Tag'
+description: 'updates the image tag of kustomize kustomization file'
+inputs:
+  imageName:
+    description: 'What image name to update tag on'
+    required: true
+  newImageTag:
+    description: 'The new Image tag to update to'
+    required: true
+  environment:
+    description: 'What environment folder to update'
+    required: true
+    default: 'dev'
+  defaultFolder:
+    description: 'What is the default kustomize folder'
+    required: true
+    default: './kustomize'
+  defaultFileExtension:
+    description: 'What is the default kustomize file extension'
+    required: true
+    default: '.yaml'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
